@@ -1,5 +1,6 @@
-var Dinosaur = function(type) {
+var Dinosaur = function(type, numberOfOffspring) {
   this.type = type;
+  this.numberOfOffspring = numberOfOffspring;
 }
 
 

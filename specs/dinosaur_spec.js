@@ -13,6 +13,10 @@ describe("Dinosaur", function() {
     assert.strictEqual("Velociraptor", dino1.type);
   });
 
+  it("can get number of offspring per year", function() {
+    assert.strictEqual(2, dino1.numberOfOffspring);
+  })
+
 
 
 });

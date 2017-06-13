@@ -15,7 +15,7 @@ describe("Dinosaur", function() {
 
   it("can get number of offspring per year", function() {
     assert.strictEqual(2, dino1.numberOfOffspring);
-  })
+  });
 
 
 

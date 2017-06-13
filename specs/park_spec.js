@@ -56,5 +56,12 @@ describe("Park", function() {
     assert.strictEqual(3, jpark.predictPopulation(1));
   });
 
+  it("predict population after one year", function() {
+    jpark.addDinosaur(dino3);
+    assert.strictEqual(9, jpark.predictPopulation(2));
+  });
+
+  
+
 
 });

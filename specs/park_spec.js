@@ -51,11 +51,10 @@ describe("Park", function() {
     assert.strictEqual(2, jpark.twoPlusOffspringCount());
   });
 
-  // it("check how many dinosaurs are in enclosure after one year with one dinosaur", function() {
-  //   jpark.addDinosaur(dino);
-  //   jpark.oneYearLater();
-  //   assert.strictEqual(3, enclosureCount());
-  // });
+  it("predict population after one year", function() {
+    jpark.addDinosaur(dino);
+    assert.strictEqual(3, jpark.predictPopulation(1));
+  });
 
 
 });

@@ -6,10 +6,15 @@ describe("Park", function() {
 
   var jpark;
   var dino;
+  var dino1;
+  var dino2;
 
   beforeEach(function() {
     jpark = new Park();
     dino = new Dinosaur("Velociraptor", 2);
+    dino1 = new Dinosaur("Velociraptor", 1);
+    dino2 = new Dinosaur("Triceratops", 3);
+    dino3 = new Dinosaur("Tyrannosaurus", 4);
   });
 
   it("check enclosure starts empty", function() {
@@ -21,6 +26,36 @@ describe("Park", function() {
     assert.strictEqual(1, jpark.enclosureCount());
   });
 
+  it("check can remove all dinosaurs of a specific type", function() {
+    jpark.addDinosaur(dino);
+    jpark.addDinosaur(dino1);
+    jpark.addDinosaur(dino2);
+    jpark.removeDinosaurType("Velociraptor");
+    assert.strictEqual(1, jpark.enclosureCount());
+  });
+
+  it("make a list of all dinosaurs with more than 2 offspring per year", function() {
+    jpark.addDinosaur(dino);
+    jpark.addDinosaur(dino1);
+    jpark.addDinosaur(dino2);
+    jpark.dinoWithMoreThanTwoOffspring();
+    assert.strictEqual(1, jpark.twoPlusOffspringCount());
+  });
+
+  it("double check make a list of all dinosaurs with more than 2 offspring per year", function() {
+    jpark.addDinosaur(dino);
+    jpark.addDinosaur(dino1);
+    jpark.addDinosaur(dino2);
+    jpark.addDinosaur(dino3);
+    jpark.dinoWithMoreThanTwoOffspring();
+    assert.strictEqual(2, jpark.twoPlusOffspringCount());
+  });
+
+  // it("check how many dinosaurs are in enclosure after one year with one dinosaur", function() {
+  //   jpark.addDinosaur(dino);
+  //   jpark.oneYearLater();
+  //   assert.strictEqual(3, enclosureCount());
+  // });
 
 
 });

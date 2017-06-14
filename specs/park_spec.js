@@ -61,7 +61,11 @@ describe("Park", function() {
     assert.strictEqual(9, jpark.predictPopulation(2));
   });
 
-  
+  it("predict population after two years with two dinosaurs", function() {
+    jpark.addDinosaur(dino);
+    jpark.addDinosaur(dino);
+    assert.strictEqual(10, jpark.predictPopulation(2));
+  });
 
 
 });

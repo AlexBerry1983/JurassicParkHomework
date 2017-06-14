@@ -30,7 +30,7 @@ Park.prototype = {
   predictPopulation: function(years) {
     var predictedPopulation = 0;
     for (var dinosaur of this.enclosure) {
-      predictedPopulation = dinosaur.numberOfOffspring * years;
+      predictedPopulation += dinosaur.numberOfOffspring * years;
     }
     return predictedPopulation + this.enclosureCount();
   }
